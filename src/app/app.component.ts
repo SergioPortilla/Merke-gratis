@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'merke-gratis-root',
+  template: '<merke-gratis-authentication></merke-gratis-authentication>'
 })
-export class AppComponent {
-  title = 'knor';
-}
+export class AppComponent {}

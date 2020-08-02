@@ -1,0 +1,23 @@
+<div class="auth">
+  <div class="auth-presentation">
+    <nav class="auth-presentation-navigate">
+      <a [ngClass]="'auth-presentation-navigate'+ (selected ? '--buttons': '--selected')" (click)="selectOption()" routerLink="merke-gratis/login" routerLinkActive="active">
+        {{'AUTHENTICATION.OPTIONS.LOGIN' | translate}}
+      </a>
+      <a [ngClass]="'auth-presentation-navigate'+ (!selected ? '--buttons': '--selected')" (click)="selectOption()" routerLink="merke-gratis/registry" routerLinkActive="active">
+        {{'AUTHENTICATION.OPTIONS.REGISTRY' | translate}}
+      </a>
+      <a class="auth-presentation-navigate--buttons" routerLink="/heroes" routerLinkActive="active">
+        {{'AUTHENTICATION.OPTIONS.INFORMATION' | translate}}
+      </a>
+    </nav>
+  </div>
+  <div class="auth-data">
+    <div class="auth-data--logo"></div>
+    <router-outlet [@routeAnimations]="prepareRoute(outlet)" #outlet="outlet"></router-outlet>
+    <div class="auth-data-footer">
+      <div class="auth-data-footer--icon"></div>
+    </div>
+  </div>
+</div>
+

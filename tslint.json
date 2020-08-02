@@ -19,13 +19,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "merke-gratis",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "merke-gratis",
       "kebab-case"
     ],
     "eofline": true,
@@ -95,7 +95,7 @@
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {

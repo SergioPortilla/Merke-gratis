@@ -1,0 +1,5 @@
+@import "src/app/pages/authentication/authentication/authentication.component";
+
+.registry {
+  @include forms_style();
+}

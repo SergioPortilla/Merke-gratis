@@ -1,0 +1,19 @@
+{
+  "AUTHENTICATION": {
+    "TITLE": "Bienvenido a",
+    "SUBTITLE": "Merke Gratis",
+    "OPTIONS": {
+      "LOGIN": "Ingreso",
+      "REGISTRY": "Registrarse",
+      "INFORMATION": "Acerca de"
+    },
+    "LOGIN": {
+      "LOGIN-USER": "Ingresar usuario",
+      "LOGIN-BUTTON": "Ingresar",
+      "USER": "Usuario",
+      "PASSWORD": "Contraseña"
+    },
+    "REGISTRY": {}
+
+  }
+}

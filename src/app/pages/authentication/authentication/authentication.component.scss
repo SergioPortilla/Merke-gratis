@@ -1,0 +1,83 @@
+@import "src/assets/scss/global/index";
+
+.auth{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+
+  &-presentation, &-data {
+    width: 100%;
+  }
+
+  &-presentation {
+    background-image: radial-gradient(ellipse farthest-corner at 60vw 0 , $principal-color 0%, $principal-opposite 120%);
+    &-navigate {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-top: 23px;
+      &--buttons {
+        padding: 15px;
+        text-decoration: none;
+        font-size: 20px;
+        color: $principal-opposite;
+        transition: order 500ms ease-in-out;
+        border-radius: 15px 0 0 15px;
+        order: 2;
+        //transition-property: background-color;
+
+        pointer-events: fill;
+      }
+      &--selected{
+        order: 1;
+        //transform: translate(200px, 150px) rotate(20deg);
+        background-color: $principal-opposite;
+        text-decoration: none;
+        color: $principal-color;
+        font-size: 20px;
+        padding: 15px;
+        width: 110px;
+        border-radius: 15px 0 0 15px;
+      }
+    }
+  };
+  &-data {
+    background-color: $principal-opposite;
+    flex-shrink: 2;
+    align-self: center;
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+    &--logo {
+      background-image: url("../../../../assets/images/logo.png");
+      background-size: contain;
+      height: 100px;
+      width: 100px;
+      right: 0;
+      padding-left: 25px;
+      margin-top: -3px;
+      position: absolute;
+      background-repeat: no-repeat;
+    }
+    &-form {
+
+    };
+    &-footer {
+      height: 55px;
+      background-color: $principal-color800 ;
+      &--icon {
+        mask-image: url('../../../../assets/svgs/grocery.svg');
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        right: 40px;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        margin-top: -170px;
+        background-color: $principal-color800;
+      }
+    }
+  }
+}
