@@ -2,12 +2,12 @@
   <h1 class="login-title">{{'AUTHENTICATION.LOGIN.LOGIN-USER' | translate}}</h1>
   <mat-form-field appearance="fill">
     <mat-label>{{'AUTHENTICATION.LOGIN.USER' | translate}}</mat-label>
-    <input matInput type="text" [(ngModel)]="userLogin.username" name="username" #input [value]="input.value.toLocaleLowerCase()" >
+    <input matInput type="text" [(ngModel)]="userLogin.username" name="username" #input [value]="input.value.toLocaleLowerCase()" required >
     <mat-icon matSuffix color="accent">person</mat-icon>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>{{'AUTHENTICATION.LOGIN.PASSWORD' | translate}}</mat-label>
-    <input matInput type="password" [(ngModel)]="userLogin.password" name="password">
+    <input matInput type="password" [(ngModel)]="userLogin.password" name="password" required>
     <mat-icon matSuffix color="accent">lock</mat-icon>
   </mat-form-field>
 

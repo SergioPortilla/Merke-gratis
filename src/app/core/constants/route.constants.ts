@@ -8,8 +8,8 @@ export class Route {
       REGISTRY: `${Route.BASE_PATH}/registry`,
       ABOUT: `${Route.BASE_PATH}/about`
     },
-    HOME: {
-      PRINCIPAL: `${Route.BASE_PATH}/home`
+    HOMEADMIN: {
+      PRINCIPAL: `${Route.BASE_PATH}/admin`
     }
   };
 }

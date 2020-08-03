@@ -31,6 +31,7 @@ export class AuthenticationComponent implements OnInit {
   ngOnInit(): void {}
 
   selectOption(id: number) {
+    localStorage.clear();
     this.optionsRoots.forEach((route) => {
       route.selected = id === route.id;
     });

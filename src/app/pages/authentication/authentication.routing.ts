@@ -6,6 +6,7 @@ import { Route } from '../../core/constants/route.constants';
 import { AboutComponent } from './about/about.component';
 
 const route: Routes = [
+  { path: '', redirectTo: Route.PATHS.AUTHENTICATION.LOGIN, pathMatch: 'full' },
   { path: Route.PATHS.INIT, redirectTo: Route.PATHS.AUTHENTICATION.LOGIN },
   { path: Route.PATHS.AUTHENTICATION.LOGIN, component: LoginComponent },
   { path: Route.PATHS.AUTHENTICATION.REGISTRY, component: RegistryComponent },

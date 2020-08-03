@@ -3,5 +3,9 @@ export const apiUrl = {
   person: '/person',
   documentType: '/documentType',
   city: '/city',
-  login: '/login'
+  login: '/login',
+  public: '/public',
+  restriction: '/restriccion',
+  admin: '/admin',
+  user: '/user'
 };

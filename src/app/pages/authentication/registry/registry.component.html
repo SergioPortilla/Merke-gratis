@@ -11,39 +11,39 @@
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.REGISTRY.DOCUMENT' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.identification" name="identification" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.identification" name="identification" #identification
+             [value]="identification.value.toLocaleLowerCase()">
       <mat-icon matSuffix color="accent">person</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.REGISTRY.FIRST-NAME' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.firstName" name="firstName" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.firstName" name="firstName" #firstName
+             [value]="firstName.value.toLocaleLowerCase()">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.REGISTRY.SECOND-NAME' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.secondName" name="secondName" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.secondName" name="secondName" #secondName
+             [value]="secondName.value.toLocaleLowerCase()">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.REGISTRY.FIRST-LAST-NAME' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.firstLastName" name="firstLastName" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.firstLastName" name="firstLastName" #firstLastName
+             [value]="firstLastName.value.toLocaleLowerCase()">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.REGISTRY.SECOND-LAST-NAME' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.secondName" name="secondName" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.secondLastName" name="secondLastName" #secondLastName
+             [value]="secondLastName.value.toLocaleLowerCase()">
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="registry-columns--complete-input">
       <mat-label>{{'AUTHENTICATION.REGISTRY.ADDRESS' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.address" name="address" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.address" name="address" #address
+             [value]="address.value.toLocaleLowerCase()">
       <mat-icon matSuffix color="accent">home</mat-icon>
     </mat-form-field>
 
@@ -62,8 +62,8 @@
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.LOGIN.USER' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.username" name="username" #input
-             [value]="input.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.username" name="username" #username
+             [value]="username.value.toLocaleLowerCase()">
       <mat-icon matSuffix color="accent">person</mat-icon>
     </mat-form-field>
 
@@ -74,7 +74,8 @@
     </mat-form-field>
   </div>
 
-  <button mat-flat-button color="accent"
-          class="registry--button">{{'AUTHENTICATION.LOGIN.LOGIN-BUTTON' | translate}}</button>
+  <button mat-flat-button color="accent" class="registry--button">
+    {{'AUTHENTICATION.LOGIN.LOGIN-BUTTON' | translate}}
+  </button>
 </form>
 
