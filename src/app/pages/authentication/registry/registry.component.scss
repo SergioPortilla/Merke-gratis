@@ -1,5 +1,20 @@
 @import "src/app/pages/authentication/authentication/authentication.component";
 
 .registry {
-  @include forms_style();
+  overflow: auto;
+  max-height: 65vh;
+  @include for-size(tablet) {max-height: 100vh;}
+  @include forms_style($accent-color);
+
+  &-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &--input {
+      width: 45%;
+    }
+    &--complete-input {
+      width: 100%;
+    }
+  }
 }

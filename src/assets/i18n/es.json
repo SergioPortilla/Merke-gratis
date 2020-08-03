@@ -9,11 +9,23 @@
     },
     "LOGIN": {
       "LOGIN-USER": "Ingresar usuario",
+      "LOGIN-USER-ERROR": "Este campo es obligatorio",
       "LOGIN-BUTTON": "Ingresar",
       "USER": "Usuario",
       "PASSWORD": "Contraseña"
     },
-    "REGISTRY": {}
-
+    "REGISTRY": {
+      "REGISTRY-USER": "Registrarse",
+      "DOCUMENT-TYPE": "Tipo de documento",
+      "DOCUMENT": "Documento",
+      "FIRST-NAME": "Primer nombre",
+      "SECOND-NAME": "Segundo nombre",
+      "FIRST-LAST-NAME": "Primer apellido",
+      "SECOND-LAST-NAME": "Segundo apellido",
+      "ADDRESS": "Dirección",
+      "PHONE": "Telefono",
+      "MAIL": "Correo electronico",
+      "CITY": "Ciudad"
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AuthenticationComponent } from './authentication/authentication/authentication.component';
-import { Route } from '../shared/constants/route.constants';
+import { Route } from '../core/constants/route.constants';
 
 const route: Routes = [
   { path: Route.PATHS.AUTHENTICATION.LOGIN, component: AuthenticationComponent }

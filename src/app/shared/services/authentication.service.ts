@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import { apiUrl } from '../constants/apiUrl.constants';
-import { Person } from '../models/person';
-import { Login } from '../models/login';
+import { apiUrl } from '../../core/constants/apiUrl.constants';
+import { Person } from '../../core/models/person';
+import { Login } from '../../core/models/login';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ import { Login } from '../models/login';
 export class AuthenticationService {
   private readonly hostUrl = environment.apiUrl;
   private readonly person = `${this.hostUrl + apiUrl.person}`;
-  private readonly login = `${this.hostUrl + apiUrl.person}`;
+  private readonly login = `${this.hostUrl + apiUrl.login}`;
 
   constructor(private http: HttpClient) {}
 

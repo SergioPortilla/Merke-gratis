@@ -1,17 +1,5 @@
 @import "../authentication/authentication.component";
 
 .login {
-  @include forms_style();
-
-  &-title {
-    color: $principal-color;
-    font-size: 30px;
-    text-transform: uppercase;
-    padding-bottom: 30px;
-  }
-
-  &--button {
-    height: 50px;
-    border-radius: 50px;
-  }
+  @include forms_style($principal-color);
 }

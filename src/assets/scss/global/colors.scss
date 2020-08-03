@@ -1,7 +1,8 @@
 $principal-color: #51aa1c;
 $principal-color800: #46a50d;
-$secondary-color: #f9c937;
+$accent-color: #f9c937;
 $principal-opposite: #f4f6ec;
+$opposite-text: #b4b1b1;
 
 // -------------------------------------- Angular styles --------------------------------------------
 $mat-merke-gratis-primary: (
@@ -43,7 +44,7 @@ $mat-merke-gratis-accent: (
   200 : #ffecaf,
   300 : #ffdc7b,
   400 : #ecc64d,
-  500 : $secondary-color,
+  500 : $accent-color,
   600 : #dbad1b,
   700 : #b68e0c,
   800 : #977500,

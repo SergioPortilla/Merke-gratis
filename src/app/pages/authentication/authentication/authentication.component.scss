@@ -6,12 +6,15 @@
   width: 100vw;
   height: 100vh;
 
+  @include for-size(tablet) { flex-direction: column; }
+
   &-presentation, &-data {
     width: 100%;
   }
 
   &-presentation {
     background-image: radial-gradient(ellipse farthest-corner at 60vw 0 , $principal-color 0%, $principal-opposite 120%);
+
     &-navigate {
       display: flex;
       flex-direction: column;
@@ -22,16 +25,13 @@
         text-decoration: none;
         font-size: 20px;
         color: $principal-opposite;
-        transition: order 500ms ease-in-out;
+        transition: color 500ms ease-in-out;
         border-radius: 15px 0 0 15px;
-        order: 2;
-        //transition-property: background-color;
-
         pointer-events: fill;
+        @include for-size(tablet) {color: $opposite-text}
       }
+
       &--selected{
-        order: 1;
-        //transform: translate(200px, 150px) rotate(20deg);
         background-color: $principal-opposite;
         text-decoration: none;
         color: $principal-color;
@@ -39,6 +39,19 @@
         padding: 15px;
         width: 110px;
         border-radius: 15px 0 0 15px;
+        transition: background-color 500ms ease-in-out;
+        @include for-size(tablet) {width: auto}
+      }
+    }
+
+    @include for-size(tablet) {
+      background-color: #f4f6ec;
+      background-image: none;
+      &-navigate {
+        flex-direction: row;
+        padding-bottom: 23px;
+        width: 75%;
+        flex-wrap: wrap;
       }
     }
   };
@@ -50,12 +63,15 @@
     justify-content: space-between;
     display: flex;
     height: 100%;
+    transition: flex-direction   200ms ease-in-out;
+    //transition: color 500ms ease-in-out;
     &--logo {
       background-image: url("../../../../assets/images/logo.png");
       background-size: contain;
       height: 100px;
       width: 100px;
       right: 0;
+      top: 0;
       padding-left: 25px;
       margin-top: -3px;
       position: absolute;
@@ -67,17 +83,41 @@
     &-footer {
       height: 55px;
       background-color: $principal-color800 ;
+
       &--icon {
-        mask-image: url('../../../../assets/svgs/grocery.svg');
+        mask: url('../../../../assets/svgs/grocery.svg') no-repeat;
         mask-size: cover;
-        mask-repeat: no-repeat;
         right: 40px;
         position: absolute;
-        width: 200px;
-        height: 200px;
-        margin-top: -170px;
+        width: 160px;
+        height: 160px;
+        margin-top: -130px;
         background-color: $principal-color800;
       }
+      @include for-size(tablet) {
+        margin-top: 50px;
+        &--icon {
+          display: none;
+        }
+      }
     }
+  }
+}
+
+@mixin forms_style($color) {
+  display: flex;
+  padding: 0 10%;
+  flex-direction: column;
+
+  &-title {
+    color: $color;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+  }
+
+  &--button {
+    height: 50px;
+    border-radius: 50px;
   }
 }

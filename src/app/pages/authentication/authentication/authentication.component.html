@@ -1,14 +1,10 @@
 <div class="auth">
   <div class="auth-presentation">
     <nav class="auth-presentation-navigate">
-      <a [ngClass]="'auth-presentation-navigate'+ (selected ? '--buttons': '--selected')" (click)="selectOption()" routerLink="merke-gratis/login" routerLinkActive="active">
-        {{'AUTHENTICATION.OPTIONS.LOGIN' | translate}}
-      </a>
-      <a [ngClass]="'auth-presentation-navigate'+ (!selected ? '--buttons': '--selected')" (click)="selectOption()" routerLink="merke-gratis/registry" routerLinkActive="active">
-        {{'AUTHENTICATION.OPTIONS.REGISTRY' | translate}}
-      </a>
-      <a class="auth-presentation-navigate--buttons" routerLink="/heroes" routerLinkActive="active">
-        {{'AUTHENTICATION.OPTIONS.INFORMATION' | translate}}
+      <a *ngFor="let route of optionsRoots" (click)="selectOption(route.id)"
+         [ngClass]="'auth-presentation-navigate'+ (route.selected ? '--selected' : '--buttons')"
+         [routerLink]="route.route" [routerLinkActive]="route.routeActive">
+        {{ route.name }}
       </a>
     </nav>
   </div>

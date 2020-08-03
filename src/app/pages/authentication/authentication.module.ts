@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { RegistryComponent } from './registry/registry.component';
 import { HttpClientModule } from '@angular/common/http';
-import { languageModules } from '../../shared/locale/language';
+import { languageModules } from '../../core/locale/language';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,9 +13,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { AuthenticationRoutingModule } from './authentication.routing';
 import { SharedModule } from '../../shared/shared.module';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [LoginComponent, AuthenticationComponent, RegistryComponent],
+  declarations: [LoginComponent, AuthenticationComponent, RegistryComponent, AboutComponent],
   exports: [AuthenticationComponent],
   imports: [
     CommonModule,
@@ -29,7 +32,9 @@ import { SharedModule } from '../../shared/shared.module';
     MatButtonModule,
     RouterModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule
   ]
 })
 export class AuthenticationModule {}

@@ -1,0 +1,5 @@
+export const Translate = {
+  login: 'AUTHENTICATION.OPTIONS.LOGIN',
+  register: 'AUTHENTICATION.OPTIONS.REGISTRY',
+  info: 'AUTHENTICATION.OPTIONS.INFORMATION'
+};

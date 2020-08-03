@@ -1,26 +1,80 @@
 <form class="registry">
-    <h1 class="login-title">{{'AUTHENTICATION.LOGIN.LOGIN-USER' | translate}}</h1>
-    <mat-form-field appearance="fill">
-      <mat-label>{{'AUTHENTICATION.LOGIN.USER' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="value">
+  <h1 class="registry-title">{{'AUTHENTICATION.REGISTRY.REGISTRY-USER' | translate}}</h1>
+
+  <div class="registry-columns">
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.DOCUMENT-TYPE' | translate}}</mat-label>
+      <mat-select [(ngModel)]="userRegistry.documentType" name="documentType">
+        <mat-option *ngFor="let documents of documentsType" [value]="documents">{{documents.description}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.DOCUMENT' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.identification" name="identification" #input
+             [value]="input.value.toLocaleLowerCase()">
       <mat-icon matSuffix color="accent">person</mat-icon>
     </mat-form-field>
-    <mat-form-field appearance="fill">
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.FIRST-NAME' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.firstName" name="firstName" #input
+             [value]="input.value.toLocaleLowerCase()">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.SECOND-NAME' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.secondName" name="secondName" #input
+             [value]="input.value.toLocaleLowerCase()">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.FIRST-LAST-NAME' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.firstLastName" name="firstLastName" #input
+             [value]="input.value.toLocaleLowerCase()">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.SECOND-LAST-NAME' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.secondName" name="secondName" #input
+             [value]="input.value.toLocaleLowerCase()">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--complete-input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.ADDRESS' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.address" name="address" #input
+             [value]="input.value.toLocaleLowerCase()">
+      <mat-icon matSuffix color="accent">home</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.CITY' | translate}}</mat-label>
+      <mat-select [(ngModel)]="userRegistry.city" name="city">
+        <mat-option *ngFor="let city of cities" [value]="city">{{city.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.REGISTRY.PHONE' | translate}}</mat-label>
+      <input matInput type="number" [(ngModel)]="userRegistry.phone" name="phone">
+      <mat-icon matSuffix color="accent">call</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
+      <mat-label>{{'AUTHENTICATION.LOGIN.USER' | translate}}</mat-label>
+      <input matInput type="text" [(ngModel)]="userRegistry.username" name="username" #input
+             [value]="input.value.toLocaleLowerCase()">
+      <mat-icon matSuffix color="accent">person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.LOGIN.PASSWORD' | translate}}</mat-label>
-      <input matInput type="password" [(ngModel)]="value">
+      <input matInput type="password" [(ngModel)]="userRegistry.password" name="password">
       <mat-icon matSuffix color="accent">lock</mat-icon>
     </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>{{'AUTHENTICATION.LOGIN.PASSWORD' | translate}}</mat-label>
-    <input matInput type="password" [(ngModel)]="value">
-    <mat-icon matSuffix color="accent">lock</mat-icon>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>{{'AUTHENTICATION.LOGIN.PASSWORD' | translate}}</mat-label>
-    <input matInput type="password" [(ngModel)]="value">
-    <mat-icon matSuffix color="accent">lock</mat-icon>
-  </mat-form-field>
+  </div>
 
-    <button mat-flat-button color="primary" class="login--button">{{'AUTHENTICATION.LOGIN.LOGIN-BUTTON' | translate}}</button>
+  <button mat-flat-button color="accent"
+          class="registry--button">{{'AUTHENTICATION.LOGIN.LOGIN-BUTTON' | translate}}</button>
 </form>
 
