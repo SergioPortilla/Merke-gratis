@@ -22,9 +22,9 @@
       "SECOND-NAME": "Segundo nombre",
       "FIRST-LAST-NAME": "Primer apellido",
       "SECOND-LAST-NAME": "Segundo apellido",
+      "MAIL": "Correo electronico",
       "ADDRESS": "Dirección",
       "PHONE": "Telefono",
-      "MAIL": "Correo electronico",
       "CITY": "Ciudad"
     }
   }

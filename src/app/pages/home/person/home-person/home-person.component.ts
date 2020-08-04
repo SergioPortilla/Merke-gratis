@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'merke-gratis-home-admin',
-  templateUrl: './home-admin.component.html',
-  styleUrls: ['./home-admin.component.scss']
+  selector: 'merke-gratis-home-person',
+  templateUrl: './home-person.component.html',
+  styleUrls: ['./home-person.component.scss']
 })
-export class HomeAdminComponent implements OnInit {
+export class HomePersonComponent implements OnInit {
   sessionType: string;
 
   constructor() {}

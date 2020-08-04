@@ -4,8 +4,6 @@ import { environment } from '../../../environments/environment';
 import { apiUrl } from '../../core/constants/apiUrl.constants';
 import { Person } from '../../core/models/person';
 import { Login } from '../../core/models/login';
-import { HttpConstants } from '../../core/constants/httpConstants';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,21 +24,22 @@ export class AuthenticationService {
   }
 
   public sendLogin(login: Login) {
-    return this.http.post(this.login, login, { observe: 'response', withCredentials: true });
+    return this.http.post(this.login, login, { responseType: 'text' });
   }
 
-  public isAdmin(): boolean {
-    if (!sessionStorage.getItem('sessionType')) {
-      this.http.get(this.admin).subscribe((response: Response) => {
-        if (response.status === HttpConstants.ACCEPTED) {
-          sessionStorage.setItem('sessionType', 'admin');
-        }
-      });
-    }
-    return !!sessionStorage.getItem('sessionType');
+  public isAdmin() {
+    return this.http.get(this.admin, { responseType: 'text', observe: 'response' });
   }
 
   public isPerson() {
-    return this.http.get(this.user);
+    return this.http.get(this.user, { responseType: 'text', observe: 'response' });
+  }
+
+  public isAuthenticate(): boolean {
+    return !!localStorage.getItem('sessionType');
+  }
+
+  public isAuthenticateAdmin(): boolean {
+    return !!localStorage.getItem('admin');
   }
 }

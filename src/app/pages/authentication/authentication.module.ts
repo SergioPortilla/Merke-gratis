@@ -11,7 +11,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { AuthenticationRoutingModule } from './authentication.routing';
 import { SharedModule } from '../../shared/shared.module';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
@@ -22,7 +21,6 @@ import { AboutComponent } from './about/about.component';
   exports: [AuthenticationComponent],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule,
     HttpClientModule,
     ...languageModules,
     MatInputModule,

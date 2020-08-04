@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
 import { HttpConstants } from '../../../core/constants/httpConstants';
 
 @Injectable()
@@ -18,7 +17,7 @@ export class AppInterceptor implements HttpInterceptor {
       });
     }
 
-    return next.handle(request).pipe(catchError(this.handlerError));
+    return next.handle(request);
   }
 
   handlerError(error: HttpErrorResponse) {

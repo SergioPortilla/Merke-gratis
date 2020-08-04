@@ -4,6 +4,8 @@ import { Person } from '../../../core/models/person';
 import { DocumentType } from '../../../core/models/documentType';
 import { ListValuesService } from '../../../shared/services/list-values.service';
 import { City } from '../../../core/models/city';
+import { Route } from '../../../core/constants/route.constants';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'merke-gratis-registry',
@@ -15,7 +17,7 @@ export class RegistryComponent implements OnInit {
   documentsType: DocumentType[];
   cities: City[];
 
-  constructor(private authService: AuthenticationService, private listValuesService: ListValuesService) {}
+  constructor(private authService: AuthenticationService, private listValuesService: ListValuesService, private router: Router) {}
 
   ngOnInit(): void {
     this.userRegistry = new Person();
@@ -32,6 +34,9 @@ export class RegistryComponent implements OnInit {
   }
 
   registry() {
-    this.authService.sendLogin(this.userRegistry).subscribe((responseany) => {});
+    this.authService.sendRegistry(this.userRegistry).subscribe((algo: any) => {
+      console.log(algo);
+    });
+    this.router.navigate([Route.PATHS.INIT + '/' + Route.PATHS.AUTHENTICATION.LOGIN]);
   }
 }

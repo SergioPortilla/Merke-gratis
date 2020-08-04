@@ -8,11 +8,13 @@ import { AuthenticationModule } from './pages/authentication/authentication.modu
 import { PagesRoutingModule } from './pages/pages.routing';
 import { AdminGuard } from './core/guards/admin.guard';
 import { AdminModule } from './pages/admin/admin.module';
+import { HomePersonComponent } from './pages/home/person/home-person/home-person.component';
+import { PersonGuard } from './core/guards/person.guard';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomePersonComponent],
   imports: [BrowserModule, HttpClientModule, AuthenticationModule, BrowserAnimationsModule, PagesRoutingModule, AdminModule],
-  providers: [AdminGuard],
+  providers: [AdminGuard, PersonGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

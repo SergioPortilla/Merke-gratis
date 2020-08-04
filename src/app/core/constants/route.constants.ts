@@ -4,12 +4,16 @@ export class Route {
   static readonly PATHS = {
     INIT: `${Route.BASE_PATH}`,
     AUTHENTICATION: {
-      LOGIN: `${Route.BASE_PATH}/login`,
-      REGISTRY: `${Route.BASE_PATH}/registry`,
-      ABOUT: `${Route.BASE_PATH}/about`
+      AUTH: `authentication`,
+      LOGIN: `login`,
+      REGISTRY: `registry`,
+      ABOUT: `about`
     },
-    HOMEADMIN: {
+    HOME_ADMIN: {
       PRINCIPAL: `${Route.BASE_PATH}/admin`
+    },
+    HOME_PERSON: {
+      PRINCIPAL: `${Route.BASE_PATH}/person`
     }
   };
 }
