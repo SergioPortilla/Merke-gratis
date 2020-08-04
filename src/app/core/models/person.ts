@@ -1,7 +1,8 @@
 import { City } from './city';
+import { Login } from './login';
 import { DocumentType } from './documentType';
 
-export class Person {
+export class Person extends Login {
   documentNumber: string;
   documentType: DocumentType;
   firstName: string;
@@ -12,6 +13,4 @@ export class Person {
   phone: number;
   city: City;
   email: string;
-  userName: string;
-  password: string;
 }

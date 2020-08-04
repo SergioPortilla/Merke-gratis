@@ -11,7 +11,7 @@ import { HomePersonComponent } from './home/person/home-person/home-person.compo
 import { PersonGuard } from '../core/guards/person.guard';
 
 const route: Routes = [
-  { path: '', redirectTo: Route.PATHS.AUTHENTICATION.LOGIN, pathMatch: 'full' },
+  { path: '', redirectTo: Route.PATHS.INIT + '/' + Route.PATHS.AUTHENTICATION.LOGIN, pathMatch: 'full' },
   {
     path: Route.PATHS.INIT,
     component: AuthenticationComponent,

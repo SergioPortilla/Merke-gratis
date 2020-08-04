@@ -20,7 +20,21 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
   public sendRegistry(person: Person) {
-    return this.http.post(this.person, person);
+    const json = {
+      documentNumber: person.documentNumber,
+      documentType: person.documentType,
+      firstName: person.firstName,
+      secondName: person.secondName,
+      firstLastName: person.firstLastName,
+      secondLastName: person.secondLastName,
+      address: person.address,
+      phone: person.phone,
+      city: person.city,
+      email: person.email,
+      userName: person.username,
+      password: person.password
+    };
+    return this.http.post(this.person, json);
   }
 
   public sendLogin(login: Login) {

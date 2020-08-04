@@ -69,8 +69,8 @@
 
     <mat-form-field appearance="fill" class="registry-columns--input">
       <mat-label>{{'AUTHENTICATION.LOGIN.USER' | translate}}</mat-label>
-      <input matInput type="text" [(ngModel)]="userRegistry.userName" name="userName" #userName
-             [value]="userName.value.toLocaleLowerCase()">
+      <input matInput type="text" [(ngModel)]="userRegistry.username" name="username" #username
+             [value]="username.value.toLocaleLowerCase()">
       <mat-icon matSuffix color="accent">person</mat-icon>
     </mat-form-field>
 
