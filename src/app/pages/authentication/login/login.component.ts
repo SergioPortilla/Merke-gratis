@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 import { Route } from '../../../core/constants/route.constants';
 import { HttpConstants } from '../../../core/constants/httpConstants';
+import * as jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'merke-gratis-login',
@@ -21,6 +22,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.sendLogin(this.userLogin).subscribe((response: string) => {
+      const decoded = jwt_decode(response);
+      console.log(decoded);
       localStorage.setItem('token', response);
       this.redirectAdmin();
     });
@@ -31,14 +34,14 @@ export class LoginComponent implements OnInit {
       if (isAdmin.status === HttpConstants.OK) {
         localStorage.setItem('sessionType', isAdmin.body);
         localStorage.setItem('admin', 'true');
-        this.router.navigate([Route.PATHS.HOME_ADMIN.PRINCIPAL]);
+        this.router.navigate([Route.BASE_PATH + '/' + Route.PATHS.HOME_ADMIN.PRINCIPAL]);
         return;
       }
     });
     this.authService.isPerson().subscribe((isPerson: HttpResponse<string>) => {
       if (isPerson.status === HttpConstants.OK && !localStorage.getItem('sessionType')) {
         localStorage.setItem('sessionType', isPerson.body);
-        this.router.navigate([Route.PATHS.HOME_PERSON.PRINCIPAL]);
+        this.router.navigate([Route.BASE_PATH + '/' + Route.PATHS.HOME_PERSON.PRINCIPAL]);
       }
     });
   }

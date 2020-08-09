@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>{{data.product_info.name}}</h2>
+<div style="display: flex; flex-direction: row">
+<div style="width: 20vw; height: 20vw; border: 1px solid #51aa1c; border-radius: .5em; display: flex; justify-content: center;">
+  <img [src]="'assets/images/products/' + data.product_info.image + '.png'" [alt]="data.product_info.name" style="max-height: 20vw">
+</div>
+  <div style="padding-left: 1em">
+    <div style="width: 25vw">Description : {{data.product_info.description}}</div>
+    <hr>
+    <div *ngFor="let flavor of data.product_info.flavors" style="display: flex; flex-direction: column">
+      <div>{{flavor}} : <mat-icon color="accent">arrow_forward_ios</mat-icon><mat-icon color="accent">arrow_back_ios</mat-icon></div>
+
+    </div>
+
+  </div>
+</div>
+<mat-dialog-content class="mat-typography">
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

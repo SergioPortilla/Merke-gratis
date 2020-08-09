@@ -10,10 +10,10 @@ export class Route {
       ABOUT: `about`
     },
     HOME_ADMIN: {
-      PRINCIPAL: `${Route.BASE_PATH}/admin`
+      PRINCIPAL: `admin`
     },
     HOME_PERSON: {
-      PRINCIPAL: `${Route.BASE_PATH}/person`
+      PRINCIPAL: `person`
     }
   };
 }

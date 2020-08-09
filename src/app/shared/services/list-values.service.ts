@@ -5,7 +5,6 @@ import { City } from '../../core/models/city';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { apiUrl } from '../../core/constants/apiUrl.constants';
-import { error } from '@angular/compiler/src/util';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

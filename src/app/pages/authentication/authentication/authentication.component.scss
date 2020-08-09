@@ -68,6 +68,7 @@
     &--logo {
       background-image: url("../../../../assets/images/logo.png");
       background-size: contain;
+      background-repeat: no-repeat;
       height: 100px;
       width: 100px;
       right: 0;
@@ -75,7 +76,6 @@
       padding-left: 25px;
       margin-top: -3px;
       position: absolute;
-      background-repeat: no-repeat;
     }
     &-form {
 

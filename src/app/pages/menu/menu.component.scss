@@ -1,0 +1,76 @@
+@import "src/assets/scss/global/index";
+
+$title: ($principal-color800, 50px);
+$info: ($principal-color, 120px);
+
+@mixin menu_mixin($color, $height) {
+  width: 94.3vw;
+  height: $height;
+  background-color: $color;
+  display: flex;
+  padding-left: 3.7vw;
+  padding-right: 2vw;
+  color: $principal-opposite;
+  justify-content: space-between;
+}
+
+.menu {
+  &-title {
+    @include menu_mixin($title...);
+    align-items: center;
+  }
+
+  &-info {
+    @include menu_mixin($info...);
+    align-items: center;
+    &--logo {
+      background-image: url("../../../assets/images/logo.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100px;
+      width: 100px;
+    }
+    &--search {
+      width: 40vw;
+      height: 3.4em;
+      border-radius: 10em;
+      background-color: $principal-opposite;
+    }
+    &-account {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      &--personal {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &-profile {
+    @include menu_mixin($title...);
+    &-category {
+      text-transform: uppercase;
+      color: $accent-opposite;
+      background-color: $accent-color;
+      width: 18em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      cursor: pointer;
+      mat-icon {
+        margin: 0 15px;
+      }
+    }
+
+    &-cart {
+      color: $accent-opposite;
+      background-color: $accent-color;
+      width: 8em;
+      height: 200%;
+      border-radius: 0 0 4em 4em;
+    }
+  }
+}

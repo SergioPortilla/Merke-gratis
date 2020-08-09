@@ -11,16 +11,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../../shared/shared.module';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { AboutComponent } from './about/about.component';
+import { AuthenticationRoutingModule } from './authentication.routing';
+import { AuthenticationSharedModule } from '../../shared/modules/authentication-shared/authentication-shared.module';
 
 @NgModule({
   declarations: [LoginComponent, AuthenticationComponent, RegistryComponent, AboutComponent],
-  exports: [AuthenticationComponent],
   imports: [
     CommonModule,
+    AuthenticationRoutingModule,
+    AuthenticationSharedModule,
     HttpClientModule,
     ...languageModules,
     MatInputModule,
@@ -29,7 +31,6 @@ import { AboutComponent } from './about/about.component';
     FormsModule,
     MatButtonModule,
     RouterModule,
-    SharedModule,
     ReactiveFormsModule,
     MatOptionModule,
     MatSelectModule

@@ -1,21 +1,24 @@
 $principal-color: #51aa1c;
-$principal-color800: #46a50d;
+$principal-color800: #469317;
+$principal-color900: #348702;
 $accent-color: #f9c937;
+$accent-opposite: #000000;
 $principal-opposite: #f4f6ec;
+$principal-opposite800: #9fd47e;
 $opposite-text: #b4b1b1;
 
 // -------------------------------------- Angular styles --------------------------------------------
 $mat-merke-gratis-primary: (
-  50 : #eaf4db,
+  50 : $principal-opposite,
   100 : #b4dc9d,
-  200 : #9fd47e,
+  200 : $principal-opposite800,
   300 : #6fc43d,
   400 : #85d05c,
   500 : $principal-color,
   600 : #62c62a,
   700 : #54b41a,
   800 : $principal-color800,
-  900 : #348702,
+  900 : $principal-color900,
   A100 : #b4dc9d,
   A200 : #9fd47e,
   A400 : #85d05c,

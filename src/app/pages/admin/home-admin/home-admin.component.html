@@ -1,1 +1,22 @@
 <p>{{sessionType}}</p>
+
+  <div class="products">
+    <div class="product" *ngFor="let product of purchase">
+      <h3 [matTooltip]="product.name">{{product.name}}</h3>
+      <div class="product-help" (click)="showInformation(product)" matTooltip="clic para mas informacion" matTooltipPosition="right">
+        <div class="product-mirror"><div class="product-mirror-x"></div><div class="product-mirror-y"></div> </div>
+        <img [src]="'assets/images/products/' + product.image + '.png'" class="product-image" [alt]="product.name">
+      </div>
+      <div class="product-price">
+        <div class="product-price-base"></div>
+        <div class="product-price-base-x">
+          <div>${{product.price}}</div>
+        </div>
+        <div class="product-price-base-y">
+          <mat-icon color="accent" (click)="amount(product,-1)">arrow_forward_ios</mat-icon>
+          <div>{{product.amount}}</div>
+          <mat-icon color="accent" (click)="amount(product, 1)">arrow_back_ios</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
