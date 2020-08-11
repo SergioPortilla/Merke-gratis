@@ -9,7 +9,10 @@ const route: Routes = [
   {
     path: '',
     component: MenuComponent,
-    children: [{ path: Route.PATHS.HOME_ADMIN.PRINCIPAL, component: HomeAdminComponent, canActivate: [AdminGuard] }]
+    children: [
+      { path: Route.PATHS.HOME_ADMIN.PRINCIPAL, component: HomeAdminComponent, canActivate: [AdminGuard] },
+      { path: Route.PATHS.HOME_ADMIN.PRINCIPAL, component: HomeAdminComponent, canActivate: [AdminGuard] }
+    ]
   }
 ];
 

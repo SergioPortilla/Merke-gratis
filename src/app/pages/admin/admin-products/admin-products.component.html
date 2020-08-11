@@ -1,0 +1,87 @@
+<div class="form">
+  <div class="form-product">{{data.is_new ? ('REGISTRY-PRODUCT.CREATE' | translate) : ('REGISTRY-PRODUCT.EDIT' | translate) }}
+    <mat-icon color="accent">shopping_cart</mat-icon>
+  </div>
+
+  <div class="form-product-data" style="">
+
+    <mat-vertical-stepper>
+      <mat-step>
+          <ng-template matStepLabel>{{'REGISTRY-PRODUCT.FIRST-STEP' | translate}}</ng-template>
+
+          <mat-form-field appearance="legacy" class="form-product-data--input-c">
+            <mat-label>{{'REGISTRY-PRODUCT.PRODUCT-CODE' | translate}}</mat-label>
+            <input matInput type="text" [(ngModel)]="data.product_info.productCode" name="productCode" required>
+          </mat-form-field> <br>
+
+          <ng-template matStepLabel>{{'REGISTRY-PRODUCT.FIRST-STEP' | translate}}</ng-template>
+          <mat-form-field appearance="legacy" class="form-product-data--input-c">
+            <mat-label>{{'REGISTRY-PRODUCT.NAME' | translate}}</mat-label>
+            <input matInput type="text" [(ngModel)]="data.product_info.name" name="name" required>
+          </mat-form-field>
+
+      </mat-step>
+      <mat-step>
+          <ng-template matStepLabel>{{'REGISTRY-PRODUCT.SECOND-STEP' | translate}}</ng-template>
+
+          <mat-form-field appearance="legacy" class="form-product-data--input-c">
+            <mat-label>{{'REGISTRY-PRODUCT.DESCRIPTION' | translate}}</mat-label>
+            <input matInput type="text" [(ngModel)]="data.product_info.description" name="description">
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="legacy" class="form-product-data--input-c">
+            <mat-label>{{'REGISTRY-PRODUCT.PRICE' | translate}}</mat-label>
+            <input matInput type="number" [(ngModel)]="data.product_info.price" name="price">
+            <mat-icon matSuffix color="primary">monetization_on</mat-icon>
+          </mat-form-field> <br>
+
+          <mat-form-field appearance="legacy" class="form-product-data--input">
+            <mat-label>{{'REGISTRY-PRODUCT.PRODUCT-TYPE' | translate}}</mat-label>
+            <mat-select [(ngModel)]="data.product_info.productType" name="productType">
+              <mat-option *ngFor="let productType of productTypes"
+                          [value]="productType">{{productType.description}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="legacy" class="form-product-data--input">
+            <mat-label>{{'REGISTRY-PRODUCT.PROVIDER' | translate}}</mat-label>
+            <mat-select [(ngModel)]="data.product_info.provider" name="provider">
+              <mat-option *ngFor="let provider of providers" [value]="provider">{{provider.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>{{'REGISTRY-PRODUCT.THIRD-STEP' | translate}}</ng-template>
+
+        <button mat-flat-button (click)="fileInput.click()">
+          <mat-icon color="primary">library_add</mat-icon>
+          <span>Select</span>
+          <input #fileInput type="file" (change)="onFileInput($event)" style="display: none"/>
+        </button>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>{{'REGISTRY-PRODUCT.IMAGE' | translate}}</mat-label>
+          <input matInput type="text" [(ngModel)]="data.product_info.image" name="image" disabled>
+          <mat-icon matSuffix color="primary">image</mat-icon>
+        </mat-form-field> <br>
+
+      </mat-step>
+    </mat-vertical-stepper>
+
+  </div>
+
+  <mat-divider></mat-divider>
+  <div class="form-buttons">
+    <button mat-button color="primary" class="registry--button">
+      {{'REGISTRY-PRODUCT.CANCEL' | translate}}
+    </button>
+
+    <button mat-flat-button color="primary" class="registry--button" [mat-dialog-close]="data">
+      {{data.is_new ? ('REGISTRY-PRODUCT.SAVE' | translate) : ('REGISTRY-PRODUCT.UPDATE' | translate) }}
+    </button>
+  </div>
+
+</div>
+
+

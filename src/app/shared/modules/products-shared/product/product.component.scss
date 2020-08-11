@@ -1,0 +1,168 @@
+@import "src/assets/scss/global/index";
+
+$size: 7em;
+
+.product {
+  padding: 0 4em 2em 4em;
+  display: flex;
+  flex-direction: column;
+  width: 11em;
+
+  h3 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: -2em;
+    color: #469317;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &:hover {
+    .product {
+      &-help {
+        cursor: pointer;
+      }
+
+      &-mirror-x {
+        background: linear-gradient(-90deg, rgba(2, 0, 36, 0) 0%, rgba(81, 170, 28, 0.625) 50%);
+        height: $size;
+        width: 10em;
+        top: 7.2em;
+        left: -20.8em;
+        transform: skewY(-32deg);
+        position: absolute;
+      }
+
+      &-mirror-y {
+        background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(81, 170, 28, 0.625) 50%);
+        height: $size;
+        top: 10.7em;
+        left: -15.4em;
+        transform: rotate(90deg) skew(0, 58deg);
+        width: 6.2em;
+        position: absolute;
+      }
+
+      &-price-base {
+        transform: translate(4.5em, -2.75em);
+        transition: all .25s linear;
+        box-shadow: -9em 3.7em 0.2em #e1e1e1;
+        border-bottom: 0 solid $principal-color;
+
+        &-x, &-y {
+          transition: all .25s linear;
+          :first-child {
+            transition: display 1s linear;
+            display: flex;
+          }
+        }
+
+        &-x {
+          width: 6em;
+          top: -0.85em;
+          left: -0.2em;
+        }
+
+        &-y {
+          height: $size;
+          width: 3.8em;
+          bottom: -2.65em;
+          left: 4.35em;
+        }
+      }
+    }
+  }
+
+  &-image {
+    display: flex;
+    align-items: center;
+    height: 14em;
+    img, mat-icon {
+      display: flex;
+      margin: auto;
+      max-height: 15em;
+      max-width: 10em;
+      z-index: 2;
+      position: relative;
+      margin-bottom: -15px;
+    }
+    mat-icon {
+      font-size: 11em;
+      width: 11em;
+      height: 1em;
+    }
+  }
+
+  &-mirror {
+    z-index: 5;
+  }
+
+  &-information {
+    width: 16em;
+    height: 19em;
+    margin-left: 13em;
+    border-radius: 1em;
+    position: absolute;
+    padding: 17px;
+    background: whitesmoke;
+    z-index: 10;
+    border: 1px dotted;
+  }
+
+  &-price, &-mirror {
+    padding-left: 1.25em;
+    transform: rotate(-35deg) skew(45deg, 5deg);
+    position: relative;
+
+    &-base {
+      background: $principal-color;
+      height: $size;
+      width: $size;
+      display: flex;
+      box-shadow: -2em 1em 0.2em #e1e1e1;
+      transition: all .25s linear;
+
+      &-x {
+        background: $principal-color900;
+        top: 0.5em;
+        left: -0.2em;
+        transform: skewY(-32deg);
+        width: 1.5em;
+      }
+
+      &-y, &-x {
+        position: absolute;
+        transition: all .25s linear;
+        height: $size;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        :first-child {
+          transition: all 3s linear;
+          transform: rotate(90deg);
+          color: $principal-opposite;
+          font-size: 18px;
+          font-weight: 500;
+          display: none;
+        }
+      }
+
+      &-y {
+        background: $principal-color800;
+        bottom: -4em;
+        left: 3.5em;
+        transform: rotate(-90deg) skew(0, 58deg);
+        width: 1em;
+      }
+
+    }
+  }
+}
+
+
+
+
+

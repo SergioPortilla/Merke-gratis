@@ -1,0 +1,51 @@
+<div class="product-type">{{'PRODUCT-TYPE.PRODUCT-TYPE' | translate}}</div>
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> {{'PRODUCT-TYPE.NEW-PRODUCT-TYPE' | translate}}</mat-panel-title>
+      <mat-panel-description>{{'PRODUCT-TYPE.NEW-DESCRIPTION' | translate}}
+        <mat-icon>add_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <form>
+      <mat-form-field appearance="legacy">
+        <mat-label>{{'PRODUCT-TYPE.DESCRIPTION' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="productType.description" name="description" required>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>{{'PRODUCT-TYPE.WEIGHT-TYPE' | translate}}</mat-label>
+        <input matInput type="text" [(ngModel)]="productType.weightType" name="weightType" required>
+      </mat-form-field>
+    </form>
+
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="saveProductType(productType)">{{'PRODUCT-TYPE.NEW-SAVE' | translate}}</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel *ngFor="let productType of productTypes; let i = index" [expanded]="step === i+1" (opened)="setStep(i+1)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{productType.description}}</mat-panel-title>
+      <mat-panel-description>{{'PRODUCT-TYPE.ID' | translate}}: {{productType.idProductType}}
+        <mat-icon>edit</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <mat-label>{{'PRODUCT-TYPE.DESCRIPTION' | translate}}</mat-label>
+      <input matInput [value]="productType.description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'PRODUCT-TYPE.WEIGHT-TYPE' | translate}}</mat-label>
+      <input matInput [value]="productType.weightType">
+    </mat-form-field>
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="updateProductType()">{{'PRODUCT-TYPE.UPDATE' | translate}}</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>

@@ -1,9 +1,13 @@
+import { Provider } from './provider';
+import { ProductType } from './productType';
+
 export class Product {
-  id: number;
-  image: string;
+  productCode: string;
+  image?: string;
   name: string;
+  provider: Provider;
+  productType: ProductType;
   description: string;
   amount: number;
   price: number;
-  flavors?: string[];
 }

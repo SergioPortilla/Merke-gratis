@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../core/models/product';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalProductsComponent } from './modal-products/modal-products.component';
+import { AdminProductsComponent } from '../admin-products/admin-products.component';
+import { ProductsService } from '../../../shared/services/products.service';
 
 @Component({
   selector: 'merke-gratis-home-admin',
@@ -10,33 +11,45 @@ import { ModalProductsComponent } from './modal-products/modal-products.componen
 })
 export class HomeAdminComponent implements OnInit {
   sessionType: string;
+  products: Product[];
+  newProduct: Product;
 
-  purchase: Product[];
-
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private productsService: ProductsService) {}
 
   ngOnInit(): void {
     this.sessionType = localStorage.getItem('sessionType');
-    this.purchase = [
-      {
-        id: 1,
-        image: 'day-owl-3L',
-        amount: 0,
-        name: 'Day Owl Whiskey',
-        description: 'is a good whiskey',
-        price: 20000,
-        flavors: ['Red Whiskey', 'Green Whiskey']
-      },
-      { id: 2, image: 'coca-cola-1.5L', amount: 0, name: 'Coca-cola', description: 'Is a famous quencher', price: 2500 },
-      {
-        id: 3,
-        image: 'pringles-extra-box',
-        amount: 0,
-        name: 'Pringles extra box familiar',
-        description: 'Potatos with many flavors',
-        price: 45000
-      }
-    ];
+    this.newProduct = new Product();
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.productsService.getProducts().subscribe((products) => {
+      products.forEach((product) => {
+        if (!product.image) {
+          product.image = 'assets/images/products/strawberry.png';
+          product.amount = 0;
+          product.name = product.description;
+        }
+      });
+      this.products = products;
+    });
+  }
+
+  deleteProduct(productCode: string) {
+    this.productsService.deleteProduct(productCode).subscribe();
+  }
+
+  saveProduct(product: Product, isNew: boolean) {
+    if (isNew) {
+      this.productsService.saveProduct(product).subscribe((response: Product) => {
+        response.image = 'assets/images/products/strawberry.png';
+        response.amount = 0;
+        response.name = response.description;
+        this.products.push(response);
+      });
+    } else {
+      this.productsService.updateProduct(product).subscribe();
+    }
   }
 
   amount(product: Product, sum: number) {
@@ -46,15 +59,15 @@ export class HomeAdminComponent implements OnInit {
     }
   }
 
-  showInformation(product: Product) {
-    const dialogRef = this.dialog.open(ModalProductsComponent, {
-      data: {
-        product_info: product
-      }
+  openDialog(product: Product, isNew: boolean) {
+    const dialogRef = this.dialog.open(AdminProductsComponent, {
+      data: { product_info: product, is_new: isNew }
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      if (result) {
+        this.saveProduct(result.product_info, isNew);
+      }
     });
   }
 }

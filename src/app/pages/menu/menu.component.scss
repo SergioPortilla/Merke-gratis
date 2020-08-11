@@ -4,17 +4,18 @@ $title: ($principal-color800, 50px);
 $info: ($principal-color, 120px);
 
 @mixin menu_mixin($color, $height) {
-  width: 94.3vw;
+  width: 94.3%;
   height: $height;
   background-color: $color;
   display: flex;
-  padding-left: 3.7vw;
-  padding-right: 2vw;
+  padding-left: 3.7%;
+  padding-right: 2%;
   color: $principal-opposite;
   justify-content: space-between;
 }
 
 .menu {
+  width: 100%;
   &-title {
     @include menu_mixin($title...);
     align-items: center;

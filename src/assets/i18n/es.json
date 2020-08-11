@@ -27,5 +27,39 @@
       "PHONE": "Telefono",
       "CITY": "Ciudad"
     }
+  },
+  "REGISTRY-PRODUCT": {
+    "FIRST-STEP": "Primero indicanos el id del producto y su nombre.",
+    "SECOND-STEP": "Ahora un par de detalles adicionales.",
+    "THIRD-STEP": "Como ultimo parametro requerimos una imagen del producto.",
+    "CREATE": "crear nuevo producto",
+    "EDIT": "Editar producto",
+    "NEW-PRODUCT": "Nuevo producto",
+
+    "PRODUCT-CODE": "Codigo del producto",
+    "NAME": "Nombre del producto",
+    "DESCRIPTION": "Descripcion",
+    "PRICE": "Precio",
+    "PRODUCT-TYPE": "Tipo de producto",
+    "AMOUNT": "Cantidad",
+    "PROVIDER": "Proveedor",
+    "IMAGE": "Imagen del producto",
+
+    "CANCEL": "Cancelar",
+    "SAVE": "Guardar",
+    "UPDATE": "Actualizar"
+  },
+  "PRODUCT-TYPE": {
+    "PRODUCT-TYPE": "Tipos de producto",
+    "NEW-PRODUCT-TYPE": "Nuevo tipo",
+    "NEW-DESCRIPTION": "Agregar tipo de producto",
+    "NEW-SAVE": "Guardar",
+    "NEW-PRODUCT": "Nuevo producto",
+    "DESCRIPTION": "Descripcion",
+    "WEIGHT-TYPE": "Tipo de peso",
+    "ID": "Id del producto",
+    "AMOUNT": "Cantidad",
+    "PROVIDER": "Proveedor",
+    "UPDATE": "Actualizar"
   }
 }

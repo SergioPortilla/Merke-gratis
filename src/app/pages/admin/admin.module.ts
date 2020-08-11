@@ -3,16 +3,46 @@ import { CommonModule } from '@angular/common';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AdminRoutingModule } from './admin.routing';
 import { MenuModule } from '../menu/menu.module';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatDialogModule } from '@angular/material/dialog';
-import { ModalProductsComponent } from './home-admin/modal-products/modal-products.component';
 import { AdminGuard } from '../../core/guards/admin.guard';
+import { ProductsSharedModule } from '../../shared/modules/products-shared/products-shared.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { languageModules } from '../../core/locale/language';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminProductTypeComponent } from './admin-product-type/admin-product-type.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  declarations: [HomeAdminComponent, ModalProductsComponent],
-  imports: [CommonModule, AdminRoutingModule, MenuModule, MatIconModule, MatTooltipModule, MatDialogModule, MatButtonModule],
+  declarations: [HomeAdminComponent, AdminProductsComponent, AdminProductTypeComponent],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    ...languageModules,
+    MenuModule,
+    ProductsSharedModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatButtonModule,
+    FormsModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatDividerModule
+  ],
   providers: [AdminGuard]
 })
 export class AdminModule {}

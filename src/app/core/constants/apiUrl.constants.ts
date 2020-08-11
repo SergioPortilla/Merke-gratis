@@ -7,5 +7,8 @@ export const apiUrl = {
   public: '/public',
   restriction: '/restriccion',
   admin: '/admin',
-  user: '/user'
+  user: '/user',
+  product: '/product',
+  productType: '/productType',
+  provider: '/provider'
 };

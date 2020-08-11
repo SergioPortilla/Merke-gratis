@@ -1,0 +1,56 @@
+@import "src/assets/scss/global/index";
+
+.form {
+  width: 40vw;
+  @include for-size(tablet) {
+    width: 100%;
+  }
+  &-product {
+    background: $principal-color800;
+    margin: -24px -24px 0 -24px;
+    padding: 24px;
+    color: $principal-opposite;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-bottom: 6px solid $accent-color;
+    display: flex;
+    justify-content: space-between;
+
+    &-data {
+      margin-top: 30px;
+      width: 80%;
+
+      &--input-c {
+        width: 80%
+      }
+
+      &--input {
+        width: 35%;
+        margin-right: 10%;
+      }
+    }
+
+    mat-icon {
+      font-size: 7em;
+      padding-right: 1em;
+      position: relative;
+    }
+
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    :first-child {
+      margin-right: 1em;
+    }
+  }
+}
+
+mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+mat-divider {
+  margin: 1em 0;
+}

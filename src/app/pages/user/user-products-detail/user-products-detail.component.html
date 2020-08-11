@@ -6,11 +6,12 @@
   <div style="padding-left: 1em">
     <div style="width: 25vw">Description : {{data.product_info.description}}</div>
     <hr>
-    <div *ngFor="let flavor of data.product_info.flavors" style="display: flex; flex-direction: column">
-      <div>{{flavor}} : <mat-icon color="accent">arrow_forward_ios</mat-icon><mat-icon color="accent">arrow_back_ios</mat-icon></div>
 
-    </div>
-
+    <button (click)="fileInput.click()">
+      <mat-icon>library_add</mat-icon>
+      <span>Select</span>
+      <input #fileInput type="file" (change)="onFileInput($event)"   style="display: none"/>
+    </button>
   </div>
 </div>
 <mat-dialog-content class="mat-typography">

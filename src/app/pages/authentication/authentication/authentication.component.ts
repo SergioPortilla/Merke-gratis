@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimation } from './authentication.animations';
-import { AuthenticationService } from '../../../shared/services/authentication.service';
 import { Roots } from '../../../core/models/roots';
 import { Route } from '../../../core/constants/route.constants';
-import { root } from 'rxjs/internal-compatibility';
 import { Translate } from '../../../core/constants/translate.constans';
 
 @Component({
