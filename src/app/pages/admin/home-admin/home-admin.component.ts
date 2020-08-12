@@ -36,7 +36,10 @@ export class HomeAdminComponent implements OnInit {
   }
 
   deleteProduct(productCode: string) {
-    this.productsService.deleteProduct(productCode).subscribe();
+    this.productsService.deleteProduct(productCode).subscribe(() => {
+      const predicate = (product: Product) => product.productCode === productCode;
+      this.products.splice(this.products.findIndex(predicate), 1);
+    });
   }
 
   saveProduct(product: Product, isNew: boolean) {
