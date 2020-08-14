@@ -21,62 +21,8 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   public getProducts(): Observable<Product[]> {
-    const product1 = {
-      productCode: '1',
-      image: 'assets/images/products/day-owl-3L.png',
-      amount: 0,
-      name: 'Day Owl Whiskey',
-      description: 'is a good whiskey',
-      price: 20000,
-      productType: {
-        idProductType: 43,
-        description: 'Carnes',
-        weightType: 'Gramos'
-      },
-      provider: {
-        id: 1,
-        name: 'Parmalat'
-      }
-    };
-    const product2 = {
-      productCode: '2',
-      image: 'assets/images/products/coca-cola-1.5L.png',
-      amount: 0,
-      name: 'Coca-cola',
-      description: 'Is a famous quencher',
-      price: 2500,
-      productType: {
-        idProductType: 1,
-        description: 'Lacteos',
-        weightType: ''
-      },
-      provider: {
-        id: 1,
-        name: 'Parmalat'
-      }
-    };
-    const product3 = {
-      productCode: '3',
-      image: 'assets/images/products/pringles-extra-box.png',
-      amount: 0,
-      name: 'Pringles extra box familiar',
-      description: 'Potatos with many flavors',
-      price: 45000,
-      productType: {
-        idProductType: 2,
-        description: 'Empaquetados',
-        weightType: ''
-      },
-      provider: {
-        id: 1,
-        name: 'Parmalat'
-      }
-    };
     return this.http.get(this.product).pipe(
       map((result: Product[]) => {
-        result.push(product1);
-        result.push(product2);
-        result.push(product3);
         return result;
       })
     );

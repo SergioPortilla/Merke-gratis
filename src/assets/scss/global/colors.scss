@@ -1,24 +1,21 @@
 $principal-color: #51aa1c;
-$principal-color800: #469317;
-$principal-color900: #348702;
 $accent-color: #f9c937;
 $accent-opposite: #000000;
 $principal-opposite: #f4f6ec;
-$principal-opposite800: #9fd47e;
 $opposite-text: #b4b1b1;
 
 // -------------------------------------- Angular styles --------------------------------------------
-$mat-merke-gratis-primary: (
+$mg-primary: (
   50 : $principal-opposite,
   100 : #b4dc9d,
-  200 : $principal-opposite800,
+  200 : #9fd47e,
   300 : #6fc43d,
   400 : #85d05c,
   500 : $principal-color,
   600 : #62c62a,
   700 : #54b41a,
-  800 : $principal-color800,
-  900 : $principal-color900,
+  800 : #469317,
+  900 : #348702,
   A100 : #b4dc9d,
   A200 : #9fd47e,
   A400 : #85d05c,
@@ -41,7 +38,7 @@ $mat-merke-gratis-primary: (
   )
 );
 
-$mat-merke-gratis-accent: (
+$mg-accent: (
   50 : #fff5e0,
   100 : #f5e6bb,
   200 : #ffecaf,
@@ -72,4 +69,18 @@ $mat-merke-gratis-accent: (
     A400 : #000000,
     A700 : #000000,
   )
+);
+
+
+$mg-blue: (
+  50 : #b0d7e5,
+  100 : #7ec6db,
+  200 : #62bbd5,
+  300 : #40a3c9,
+  400 : #2b93ba,
+  500 : #1b8ab3,
+  600 : #117092,
+  700 : #036889,
+  800 : #00536d,
+  900 : #004055,
 );

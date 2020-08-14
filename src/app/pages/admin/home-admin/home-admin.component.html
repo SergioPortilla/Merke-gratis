@@ -1,10 +1,11 @@
 <div class="admin">
 
   <div class="admin-products">
+    <div class="product-type">{{'PRODUCT-TYPE.PRODUCT-TYPE' | translate}}</div>
 
-    <merke-gratis-product [product]="newProduct" (productChanges)="openDialog(newProduct, true)"></merke-gratis-product>
+    <merke-gratis-product title="Nuevo Producto" (productChanges)="openDialog(newProduct, true)" color="blue"></merke-gratis-product>
 
-    <merke-gratis-product *ngFor="let product of products" [product]="product" (productChanges)="openDialog(product, false)">
+    <merke-gratis-product *ngFor="let product of products" [title]="product.name" [image]="product.image" (productChanges)="openDialog(product, false)">
 
       <merke-gratis-left-info>
         <mat-form-field appearance="legacy" color="accent">

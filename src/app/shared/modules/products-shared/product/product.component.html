@@ -1,25 +1,24 @@
 <div class="product">
-  <h3 *ngIf="product.name">{{product.name}}</h3>
-  <h3 *ngIf="!product.name">Nuevo Producto</h3>
+  <h3>{{title}}</h3>
   <div class="product-help" (click)="showInformation()" matTooltip="clic para mas informacion"
        matTooltipPosition="right">
     <div class="product-mirror">
-      <div class="product-mirror-x"></div>
-      <div class="product-mirror-y"></div>
+      <div [ngClass]="'product-mirror-x '+ colorGradient+'-x'"></div>
+      <div [ngClass]="'product-mirror-y '+ colorGradient+'-y'"></div>
     </div>
     <div class="product-image">
-      <img *ngIf="product.image" [src]="product.image" [alt]="product.name">
-      <mat-icon *ngIf="!product.image" color="accent">add_circle</mat-icon>
+      <img *ngIf="image" [src]="image" [alt]="title">
+      <mat-icon *ngIf="!image" color="accent">add_circle</mat-icon>
     </div>
   </div>
   <div class="product-price">
-    <div class="product-price-base"></div>
-    <div class="product-price-base-x">
+    <div [ngClass]="'product-price-base ' + color"></div>
+    <div [ngClass]="'product-price-base-x ' + color900">
       <div>
         <ng-content select="merke-gratis-left-info"></ng-content>
       </div>
     </div>
-    <div class="product-price-base-y">
+    <div [ngClass]="'product-price-base-y ' + color800">
       <div>
         <ng-content select="merke-gratis-right-info"></ng-content>
       </div>

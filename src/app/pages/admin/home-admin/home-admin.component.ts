@@ -3,6 +3,7 @@ import { Product } from '../../../core/models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminProductsComponent } from '../admin-products/admin-products.component';
 import { ProductsService } from '../../../shared/services/products.service';
+import { DeleteProductsComponent } from '../admin-products/delete-products.component';
 
 @Component({
   selector: 'merke-gratis-home-admin',
@@ -27,8 +28,6 @@ export class HomeAdminComponent implements OnInit {
       products.forEach((product) => {
         if (!product.image) {
           product.image = 'assets/images/products/strawberry.png';
-          product.amount = 0;
-          product.name = product.description;
         }
       });
       this.products = products;
@@ -36,18 +35,22 @@ export class HomeAdminComponent implements OnInit {
   }
 
   deleteProduct(productCode: string) {
-    this.productsService.deleteProduct(productCode).subscribe(() => {
-      const predicate = (product: Product) => product.productCode === productCode;
-      this.products.splice(this.products.findIndex(predicate), 1);
+    const dialogRef = this.dialog.open(DeleteProductsComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.productsService.deleteProduct(productCode).subscribe(() => {
+          const predicate = (product: Product) => product.productCode === productCode;
+          this.products.splice(this.products.findIndex(predicate), 1);
+        });
+      }
     });
   }
 
   saveProduct(product: Product, isNew: boolean) {
     if (isNew) {
       this.productsService.saveProduct(product).subscribe((response: Product) => {
-        response.image = 'assets/images/products/strawberry.png';
-        response.amount = 0;
-        response.name = response.description;
+        response.image = 'assets/images/products/coca-cola-6L.png';
         this.products.push(response);
       });
     } else {

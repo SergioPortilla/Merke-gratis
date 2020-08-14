@@ -1,13 +1,23 @@
+@import "src/assets/scss/global/index";
 
-.admin {
+%display {
   display: flex;
   flex-direction: row;
+}
+
+.admin {
+  @extend %display;
   justify-content: space-between;
   margin: 3em;
+  @include for-size(tablet) {flex-direction: column;}
   &-products {
-    display: flex;
-    flex-direction: row;
+    width: -webkit-fill-available;
+    @extend %display;
     flex-wrap: wrap;
+    margin: 0 2em 0 0;
+  }
+  &-types {
+    flex-shrink: 0;
   }
 }
 mat-icon {
@@ -19,6 +29,18 @@ mat-form-field {
   margin-top: 1.5em;
 }
 
-mdc-dialog__backdrop {
-  pointer-events: none;
+.product-type {
+  background: map-get($mg-primary, 800);
+  margin-bottom: .5em;
+  border-radius: 4px;
+  width: 100%;
+  height: 3em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }

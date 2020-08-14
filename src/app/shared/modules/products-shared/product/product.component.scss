@@ -1,6 +1,37 @@
 @import "src/assets/scss/global/index";
 
 $size: 7em;
+$principal-gradient-x: linear-gradient(-90deg, rgba(2, 0, 36, 0) 0%, rgba(81, 170, 28, 0.625) 50%);
+$principal-gradient-y: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(81, 170, 28, 0.625) 50%);
+$principal-gradient-x-blue: linear-gradient(-90deg, rgba(2, 0, 36, 0) 0%, rgba(27, 138, 179, 0.625) 50%);
+$principal-gradient-y-blue: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(27, 138, 179, 0.625) 50%);
+$principal-gradient-x-accent: linear-gradient(-90deg, rgba(2, 0, 36, 0) 0%, rgba(249, 201, 57, 0.625) 50%);
+$principal-gradient-y-accent: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(249, 201, 57, 0.625) 50%);
+
+@mixin cube($tob, $tob-size, $lor, $lor-size, $width, $rotate, $skew) {
+  height: $size;
+  #{$tob} : $tob-size;
+  #{$lor} : $lor-size;
+  transform: $rotate $skew;
+  width: $width;
+  position: absolute;
+}
+
+.mg--blue { background: map-get($mg-blue, 500)}
+.mg--blue800 { background: map-get($mg-blue, 700)}
+.mg--blue900 { background: map-get($mg-blue, 800)}
+.mg--blue-gradient-y { background: $principal-gradient-y-blue}
+.mg--blue-gradient-x { background: $principal-gradient-x-blue}
+.mg--primary { background: map-get($mg-primary, 500)}
+.mg--primary800 { background: map-get($mg-primary, 800)}
+.mg--primary900 { background: map_get($mg-primary, 900)}
+.mg--primary-gradient-y { background: $principal-gradient-y}
+.mg--primary-gradient-x { background: $principal-gradient-x}
+.mg--accent { background: map-get($mg-accent, 500)}
+.mg--accent800 { background: map-get($mg-accent, 800)}
+.mg--accent900 { background: map_get($mg-accent, 900)}
+.mg--accent-gradient-y { background: $principal-gradient-y-accent}
+.mg--accent-gradient-x { background: $principal-gradient-x-accent}
 
 .product {
   padding: 0 4em 2em 4em;
@@ -13,7 +44,6 @@ $size: 7em;
     text-overflow: ellipsis;
     overflow: hidden;
     margin-left: -2em;
-    color: #469317;
     font-weight: 500;
     font-size: 20px;
   }
@@ -25,30 +55,17 @@ $size: 7em;
       }
 
       &-mirror-x {
-        background: linear-gradient(-90deg, rgba(2, 0, 36, 0) 0%, rgba(81, 170, 28, 0.625) 50%);
-        height: $size;
-        width: 10em;
-        top: 7.2em;
-        left: -20.8em;
-        transform: skewY(-32deg);
-        position: absolute;
+        @include cube(top, 7.2em, left, -20.8em, 10em, rotate(0), skewY(-32deg));
       }
 
       &-mirror-y {
-        background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(81, 170, 28, 0.625) 50%);
-        height: $size;
-        top: 10.7em;
-        left: -15.4em;
-        transform: rotate(90deg) skew(0, 58deg);
-        width: 6.2em;
-        position: absolute;
+        @include cube(top, 10.7em, left, -15.4em, 6.2em, rotate(90deg), skewY(58deg));
       }
 
       &-price-base {
         transform: translate(4.5em, -2.75em);
         transition: all .25s linear;
         box-shadow: -9em 3.7em 0.2em #e1e1e1;
-        border-bottom: 0 solid $principal-color;
 
         &-x, &-y {
           transition: all .25s linear;
@@ -116,7 +133,6 @@ $size: 7em;
     position: relative;
 
     &-base {
-      background: $principal-color;
       height: $size;
       width: $size;
       display: flex;
@@ -124,15 +140,13 @@ $size: 7em;
       transition: all .25s linear;
 
       &-x {
-        background: $principal-color900;
-        top: 0.5em;
-        left: -0.2em;
-        transform: skewY(-32deg);
-        width: 1.5em;
+        @include cube(top,  0.5em, left, -0.2em, 1.5em, rotate(0), skewY(-32deg));
+      }
+      &-y {
+        @include cube(bottom,  -4em, left, 3.5em, 1em, rotate(-90deg), skewY(58deg));
       }
 
       &-y, &-x {
-        position: absolute;
         transition: all .25s linear;
         height: $size;
         display: flex;
@@ -149,15 +163,6 @@ $size: 7em;
           display: none;
         }
       }
-
-      &-y {
-        background: $principal-color800;
-        bottom: -4em;
-        left: 3.5em;
-        transform: rotate(-90deg) skew(0, 58deg);
-        width: 1em;
-      }
-
     }
   }
 }

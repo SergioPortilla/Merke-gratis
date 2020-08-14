@@ -20,9 +20,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDividerModule } from '@angular/material/divider';
+import { DeleteProductsComponent } from './admin-products/delete-products.component';
 
 @NgModule({
-  declarations: [HomeAdminComponent, AdminProductsComponent, AdminProductTypeComponent],
+  declarations: [HomeAdminComponent, AdminProductsComponent, AdminProductTypeComponent, DeleteProductsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

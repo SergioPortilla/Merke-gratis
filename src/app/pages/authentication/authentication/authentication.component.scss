@@ -77,12 +77,9 @@
       margin-top: -3px;
       position: absolute;
     }
-    &-form {
-
-    };
     &-footer {
       height: 55px;
-      background-color: $principal-color800 ;
+      background-color: map-get($mg-primary, 800) ;
 
       &--icon {
         mask: url('../../../../assets/svgs/grocery.svg') no-repeat;
@@ -92,7 +89,7 @@
         width: 160px;
         height: 160px;
         margin-top: -130px;
-        background-color: $principal-color800;
+        background-color: map-get($mg-primary, 800);
       }
       @include for-size(tablet) {
         margin-top: 50px;

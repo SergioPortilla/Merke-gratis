@@ -1,6 +1,6 @@
 @import "src/assets/scss/global/index";
 
-$title: ($principal-color800, 50px);
+$title: (map-get($mg-primary, 800), 50px);
 $info: ($principal-color, 120px);
 
 @mixin menu_mixin($color, $height) {

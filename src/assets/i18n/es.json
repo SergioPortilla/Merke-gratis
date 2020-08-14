@@ -46,8 +46,11 @@
     "IMAGE": "Imagen del producto",
 
     "CANCEL": "Cancelar",
+    "OK": "Aceptar",
     "SAVE": "Guardar",
-    "UPDATE": "Actualizar"
+    "UPDATE": "Actualizar",
+    "WARNING": "Aviso",
+    "DELETE-PRODUCT": "¿Esta seguro que desea eliminar el producto?"
   },
   "PRODUCT-TYPE": {
     "PRODUCT-TYPE": "Tipos de producto",

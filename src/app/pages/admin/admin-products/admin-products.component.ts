@@ -41,10 +41,3 @@ export class AdminProductsComponent implements OnInit {
     // });
   }
 }
-
-// @Component({
-//   selector: 'merke-gratis-admin-products',
-//   templateUrl: './admin-products.component.html',
-//   styleUrls: ['./admin-products.component.scss']
-// })
-// export class deleteProductsComponent {}

@@ -6,7 +6,7 @@
     width: 100%;
   }
   &-product {
-    background: $principal-color800;
+    background: map-get($mg-primary, 800);
     margin: -24px -24px 0 -24px;
     padding: 24px;
     color: $principal-opposite;

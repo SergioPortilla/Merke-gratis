@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LeftInfoComponent, ProductComponent, RightInfoComponent } from './product/product.component';
+import { ProductComponent } from './product/product.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ProductRightInfoComponent } from './product/product-right-info.component';
+import { ProductLeftInfoComponent } from './product/product-left-info.component';
 
 @NgModule({
-  declarations: [ProductComponent, RightInfoComponent, LeftInfoComponent],
+  declarations: [ProductComponent, ProductRightInfoComponent, ProductLeftInfoComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -20,6 +22,6 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule
   ],
-  exports: [ProductComponent, RightInfoComponent, LeftInfoComponent]
+  exports: [ProductComponent, ProductRightInfoComponent, ProductLeftInfoComponent]
 })
 export class ProductsSharedModule {}

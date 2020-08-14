@@ -1,4 +1,5 @@
 @mixin for-size($size) {
+  transition: width .5s ease-in-out;
   @if $size == phone {
     @media (max-width: 599px) {
       @content;
