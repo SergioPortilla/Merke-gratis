@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+@import "global/index";
+
+@include mat-core();
+
+$merke-gratis-primary: mat-palette($mg-primary);
+$merke-gratis-accent: mat-palette($mg-accent);
+
+$merke-gratis-warn: mat-palette($mat-red);
+
+$merke-gratis-theme: mat-light-theme((
+  color: (
+    primary: $merke-gratis-primary,
+    accent: $merke-gratis-accent,
+    warn: $merke-gratis-warn,
+  )
+));
+
+@include angular-material-theme($merke-gratis-theme);
