@@ -4,9 +4,9 @@ import { Route } from '../core/constants/route.constants';
 import { MenuComponent } from './menu/menu.component';
 
 const route: Routes = [
-  { path: '', redirectTo: Route.PATHS.INIT + '/' + Route.PATHS.AUTHENTICATION.LOGIN, pathMatch: 'full' },
+  { path: '', redirectTo: Route.PATHS.AUTHENTICATION.LOGIN, pathMatch: 'full' },
   {
-    path: Route.PATHS.INIT,
+    path: '',
     children: [
       {
         path: '',

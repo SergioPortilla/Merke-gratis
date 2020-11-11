@@ -37,6 +37,6 @@ export class RegistryComponent implements OnInit {
     this.authService.sendRegistry(this.userRegistry).subscribe((algo: any) => {
       console.log(algo);
     });
-    this.router.navigate([Route.PATHS.INIT + '/' + Route.PATHS.AUTHENTICATION.LOGIN]);
+    this.router.navigate([Route.PATHS.AUTHENTICATION.LOGIN]);
   }
 }

@@ -34,14 +34,14 @@ export class LoginComponent implements OnInit {
       if (isAdmin.status === HttpConstants.OK) {
         localStorage.setItem('sessionType', isAdmin.body);
         localStorage.setItem('admin', 'true');
-        this.router.navigate([Route.BASE_PATH + '/' + Route.PATHS.HOME_ADMIN.PRINCIPAL]);
+        this.router.navigate([Route.PATHS.HOME_ADMIN.PRINCIPAL]);
         return;
       }
     });
     this.authService.isPerson().subscribe((isPerson: HttpResponse<string>) => {
       if (isPerson.status === HttpConstants.OK && !localStorage.getItem('sessionType')) {
         localStorage.setItem('sessionType', isPerson.body);
-        this.router.navigate([Route.BASE_PATH + '/' + Route.PATHS.HOME_PERSON.PRINCIPAL]);
+        this.router.navigate([Route.PATHS.HOME_PERSON.PRINCIPAL]);
       }
     });
   }

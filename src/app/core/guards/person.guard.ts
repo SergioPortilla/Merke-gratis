@@ -14,7 +14,7 @@ export class PersonGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate([Route.PATHS.INIT + '/' + Route.PATHS.AUTHENTICATION.LOGIN]);
+    this.router.navigate([Route.PATHS.AUTHENTICATION.LOGIN]);
     return false;
   }
 }
